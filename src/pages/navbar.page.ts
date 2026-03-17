@@ -43,6 +43,23 @@ export class NavBarPage {
   }
 
   async clickActivateEmployeeAccount(): Promise<void> {
-    await this.page.getByRole("button", { name: "Activate Employee Account" }).click();
+    await this.page
+      .getByRole("button", { name: "Activate Employee Account" })
+      .click();
+  }
+
+  async clickProfileButton(): Promise<void> {
+    const menuButton = this.page.getByRole("button", { name: "menu" }).nth(1);
+
+    await expect(menuButton).toBeVisible();
+    await menuButton.click();
+  }
+
+  async clickChangePassword(): Promise<void> {
+    await this.page.getByRole("menuitem", { name: "Change Password" }).click();
+  }
+
+  async clickOnTheBranchDeptMappingPage(): Promise<void> {
+    await this.page.getByRole("button", { name: "Parameters" }).click();
   }
 }

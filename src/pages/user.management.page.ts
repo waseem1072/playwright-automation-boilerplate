@@ -49,7 +49,18 @@ export class UserManagementPage {
       .isVisible();
   }
 
-  async clickInactiveButton(restrictionReason: string): Promise<void> {
+    async clickInactiveTemporaryButton(restrictionReason: string): Promise<void> {
+    await this.page.getByRole("button", { name: "Inactive" }).first().click();
+    await this.page.locator("#root_isRestrictionPermanent").click();
+    await this.page
+      .locator('li[role="option"]', { hasText: "Temporary" })
+      .click();
+    await this.page.locator("#root_restrictionReason").fill(restrictionReason);
+    await this.page.getByRole("button", { name: "Inactivate" }).click();
+  }
+
+
+  async clickInactivePermanentButton(restrictionReason: string): Promise<void> {
     await this.page.getByRole("button", { name: "Inactive" }).first().click();
     await this.page.locator("#root_isRestrictionPermanent").click();
     await this.page
@@ -57,5 +68,11 @@ export class UserManagementPage {
       .click();
     await this.page.locator("#root_restrictionReason").fill(restrictionReason);
     await this.page.getByRole("button", { name: "Inactivate" }).click();
+  }
+
+    async clickReActiveButton(restrictionReason: string): Promise<void> {
+   await this.page.locator("#outlined-basic").fill(restrictionReason);
+   await this.page.getByRole('button', { name: 'Activate' }).first().click();
+   await this.page.getByRole('button', { name: 'Activate' }).click();
   }
 }

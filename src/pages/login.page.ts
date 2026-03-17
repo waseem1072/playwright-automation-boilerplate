@@ -19,9 +19,9 @@ export class LoginPage {
 
   async loginWithchangePassword(username: string, password: string, location: string) {
     await this.page.getByRole('button', { name: 'Continue' }).click();
-    await this.page.fill("#root_currentPassword", username);
-    await this.page.fill("#root_newPassword", password);
-    await this.page.fill("#root_reNewPassword", password);
+    await this.page.locator("#root_currentPassword").fill(username);
+    await this.page.locator("#root_newPassword").fill(password);
+    await this.page.locator("#root_reNewPassword").fill(password);
     await this.page.getByRole('button', { name: 'Reset Password' }).click();
   }
 
