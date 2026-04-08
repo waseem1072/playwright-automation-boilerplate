@@ -1,0 +1,23 @@
+name: nav api
+description: >
+  Verify clicking the API nav link navigates to the Playwright Library API reference page.
+config:
+  browser: chromium
+  baseURL: https://playwright.dev
+  headless: true
+steps:
+  - id: goto_homepage
+    description: Navigate to the Playwright homepage
+    action: goto
+    url: https://playwright.dev
+
+  - id: click_api_nav
+    description: Click the API link in the top navigation bar
+    action: click
+    selector: role=link[name='API']
+    assertions:
+      - type: url
+        expected: https://playwright.dev/docs/api/class-playwright
+      - type: text
+        selector: role=heading[name='Playwright Library']
+        expected: Playwright Library

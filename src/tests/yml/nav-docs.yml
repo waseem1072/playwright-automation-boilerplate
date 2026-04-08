@@ -1,0 +1,23 @@
+name: nav docs
+description: >
+  Verify clicking the Docs nav link navigates to the Installation page.
+config:
+  browser: chromium
+  baseURL: https://playwright.dev
+  headless: true
+steps:
+  - id: goto_homepage
+    description: Navigate to the Playwright homepage
+    action: goto
+    url: https://playwright.dev
+
+  - id: click_docs_nav
+    description: Click the Docs link in the top navigation bar
+    action: click
+    selector: role=link[name='Docs']
+    assertions:
+      - type: url
+        expected: https://playwright.dev/docs/intro
+      - type: text
+        selector: role=heading[name='Installation']
+        expected: Installation

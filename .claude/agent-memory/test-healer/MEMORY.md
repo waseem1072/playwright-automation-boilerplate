@@ -1,0 +1,4 @@
+- [Hero heading assertion strategy](feedback_hero_heading.md) — use `toContainText('Playwright enables reliable')` prefix only; full heading is volatile marketing copy
+- [Cross-origin sub-site screenshot font timeout](feedback_cross_origin_screenshot.md) — /python/ /java/ /dotnet/ sub-sites need `waitForLoadState('networkidle')` + `{ timeout: 15000 }` before toHaveScreenshot
+- [Snapshot baseline regeneration protocol](feedback_snapshot_updates.md) — fix text assertions first, then --update-snapshots in headless mode, then verify with smoke run
+- [Heading getter must always include level:1](feedback_heading_getter_level.md) — SPA sidebar/breadcrumb share heading-role text with h1; omitting level:1 causes off-screen match and toBeVisible timeout

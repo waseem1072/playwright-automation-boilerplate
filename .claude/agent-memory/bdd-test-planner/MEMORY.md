@@ -1,0 +1,3 @@
+- [User Role and Context](user_role.md) — user is a QA engineer building BDD test plans for a Playwright/TS project against saucedemo.com
+- [Project BDD YAML Conventions](project_yaml_conventions.md) — YAML structure, selector patterns, and tag strategy established across src/tests/yml/ files
+- [Planned Scenarios Index](planned_scenarios_index.md) — running index of all planned scenario IDs by feature area to prevent duplication

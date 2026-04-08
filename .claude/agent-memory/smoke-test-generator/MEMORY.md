@@ -1,0 +1,2 @@
+- [User Role and Context](user_role.md) — QA engineer automating saucedemo.com; expects exact convention match in generated YAML + TS specs
+- [Project Conventions and Selector Patterns](project_conventions.md) — credentials import path, tag syntax, POM instantiation, NavbarPage API, YAML structure, selectors

@@ -1,0 +1,36 @@
+name: docs-sidebar-web-server-happy-path
+description: >
+  Verify that clicking the Web server sidebar link from the docs intro page navigates to
+  the Web server page with the correct URL, h1 heading, and document title.
+
+config:
+  browser: chromium
+  baseURL: https://playwright.dev
+  headless: true
+
+# TC-005 @docs @smoke @positive
+# Page object: PlaywrightDocsPage
+
+steps:
+  - id: goto_docs_intro
+    description: Navigate directly to the Playwright docs intro page
+    action: goto
+    url: https://playwright.dev/docs/intro
+    assertions:
+      - type: visible
+        selector: role=heading[name='Installation']
+        expected: Installation
+
+  - id: click_web_server_sidebar
+    description: Click the Web server link in the left sidebar to navigate to the Web server page
+    action: click
+    selector: role=link[name='Web server'] # REVIEW: sidebar contains many links; this name should be unique but .first() may be needed if duplicates exist
+    assertions:
+      - type: url
+        expected: https://playwright.dev/docs/test-webserver
+      - type: visible
+        selector: role=heading[name='Web server'][level=1]
+        expected: Web server
+      - type: text
+        selector: title # REVIEW: <title> is not a visible DOM element — translate to expect(page).toHaveTitle() in TS, not a locator text check
+        contains: Web server

@@ -1,0 +1,44 @@
+{
+  "paths": {
+    "home": "/",
+    "docs": "/docs/intro",
+    "api": "/docs/api/class-playwright",
+    "community": "/community/welcome"
+  },
+
+  "locators": {
+    "nav": {
+      "docs":      "role=link[name='Docs']",
+      "api":       "role=link[name='API']",
+      "community": "role=link[name='Community']"
+    },
+    "hero": {
+      "getStarted": "role=link[name='Get started']",
+      "getStartedNote": "Two 'Get started' links exist on the page — use .first() or nth=0",
+      "headingPartialMatch": "Playwright enables reliable",
+      "headingNote": "Full heading changed 2026-04 to 'Playwright enables reliable web automation for testing, scripting, and AI agents.' — assert only the stable prefix"
+    },
+    "logo": "role=link[name=/Playwright logo/]",
+    "search": {
+      "button":  "role=button[name=/Search/]",
+      "inputBox": "role=searchbox[name='Search']"
+    },
+    "darkMode": "role=button[name=/Switch between dark and light mode/]",
+    "languageSelector": {
+      "nodejsButton": "role=button[name='Node.js']",
+      "pythonLink":   "role=link[name='Python']",
+      "note": "Language selector requires two steps: click Node.js button first, then click target language link scoped to getByLabel('Main', { exact: true })"
+    },
+    "headings": {
+      "installation": "role=heading[name='Installation']",
+      "writingTests": "role=heading[name='Writing tests']",
+      "api":          "role=heading[name='Playwright Library']"
+    }
+  },
+
+  "expectedTitles": {
+    "home":  "Playwright",
+    "docs":  "Installation | Playwright",
+    "api":   "Playwright Library | Playwright"
+  }
+}

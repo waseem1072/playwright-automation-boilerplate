@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const d=JSON.parse(require('fs').readFileSync(0,'utf8'));const p=(d.prompt||'').toLowerCase();const hasFormalTestMarker=['test case','preconditions:','expected results','acceptance criteria','user story'].some(k=>p.includes(k));const hasBddTriple=p.includes('given')&&p.includes('when')&&p.includes('then');const isTestCase=hasFormalTestMarker||(hasBddTriple&&!p.includes('yaml'));const isBddYaml=p.includes('yaml')&&hasBddTriple&&(p.includes('scenario')||p.includes('feature:'));const isYmlPath=/\\.yml/.test(d.prompt||'');if(isTestCase&&!isBddYaml){process.stdout.write(JSON.stringify({hookSpecificOutput:{hookEventName:'UserPromptSubmit',additionalContext:'[pipeline-router] BLOCKING REQUIREMENT: Test case or user story detected. You MUST immediately invoke the /story-to-test skill without asking the user for confirmation. Do NOT explain what you are about to do — just invoke /story-to-test now and execute every pipeline step (bdd-test-planner → yaml-browser-sim → playwright-ts-generator → test run → test-healer if needed) through to a passing test and written snapshot baselines. Only report back when the full pipeline is complete.'}})+String.fromCharCode(10))}else if(isBddYaml){process.stdout.write(JSON.stringify({hookSpecificOutput:{hookEventName:'UserPromptSubmit',additionalContext:'[pipeline-router] BLOCKING REQUIREMENT: BDD YAML detected. You MUST immediately invoke /yaml-generator to produce a browser-verified YAML simulation, then invoke /ts-generator <path> to generate the TypeScript spec. Proceed through both stages without pausing for confirmation.'}})+String.fromCharCode(10))}else if(isYmlPath&&p.includes('ts-generator')){process.stdout.write(JSON.stringify({hookSpecificOutput:{hookEventName:'UserPromptSubmit',additionalContext:'[pipeline-router] BLOCKING REQUIREMENT: YAML path detected with ts-generator intent. You MUST immediately invoke /ts-generator with the YAML path to generate the Page Object and TypeScript spec without pausing for confirmation.'}})+String.fromCharCode(10))}\"",
+            "timeout": 5,
+            "statusMessage": "pipeline-router: analysing input..."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const d=JSON.parse(require('fs').readFileSync(0,'utf8'));const cmd=(d.tool_input&&d.tool_input.command)||'';const out=JSON.stringify(d.tool_response||'');const isPlaywrightRun=/npm test|npx playwright test/i.test(cmd);if(!isPlaywrightRun)process.exit(0);const isAlreadySmoke=/--grep[^'\\\"]*@smoke/.test(cmd);if(/[0-9]+ failed|Error:/i.test(out)){process.stdout.write(JSON.stringify({hookSpecificOutput:{hookEventName:'PostToolUse',additionalContext:'[test-healer] BLOCKING REQUIREMENT: Playwright test failures detected. You MUST immediately invoke the test-healer agent — do NOT re-run the failing command first. Pass to test-healer: (1) the exact failing test name(s), (2) the full error message and stack trace from above, (3) the spec file path and the page object file path. test-healer will apply surgical fixes to src/pages/*.ts. After it returns the healed code, apply the fix and re-run the test. Repeat until all tests pass.'}})+String.fromCharCode(10))}else if(/passed/i.test(out)&&!/failed/i.test(out)&&!isAlreadySmoke){process.stdout.write(JSON.stringify({hookSpecificOutput:{hookEventName:'PostToolUse',additionalContext:'[pipeline-router] All tests passed. If this was a --update-snapshots run, snapshot baselines are now written. NEXT REQUIRED ACTION: run npx playwright test --grep @smoke to verify the full smoke suite passes.'}})+String.fromCharCode(10))}\"",
+            "timeout": 10,
+            "statusMessage": "pipeline-router: evaluating test results..."
+          }
+        ]
+      }
+    ]
+  }
+}

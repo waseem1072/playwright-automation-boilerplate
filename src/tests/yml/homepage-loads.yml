@@ -1,0 +1,20 @@
+name: homepage loads
+description: >
+  Verify the Playwright homepage loads with the correct title, hero heading, and Get Started link visible.
+config:
+  browser: chromium
+  baseURL: https://playwright.dev
+  headless: true
+steps:
+  - id: goto_homepage
+    description: Navigate to the Playwright homepage
+    action: goto
+    url: https://playwright.dev
+    assertions:
+      - type: url
+        expected: https://playwright.dev/
+      - type: text
+        selector: role=heading[name='Playwright enables reliable end-to-end testing for modern web apps.']
+        contains: Playwright enables reliable
+      - type: visible
+        selector: role=link[name='Get started']

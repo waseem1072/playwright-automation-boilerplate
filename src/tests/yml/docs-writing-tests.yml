@@ -1,0 +1,23 @@
+name: docs writing tests
+description: >
+  Verify clicking the Writing tests sidebar link from the intro page navigates to the Writing tests page.
+config:
+  browser: chromium
+  baseURL: https://playwright.dev
+  headless: true
+steps:
+  - id: goto_docs_intro
+    description: Navigate directly to the Playwright docs intro page
+    action: goto
+    url: https://playwright.dev/docs/intro
+
+  - id: click_writing_tests_sidebar
+    description: Click the Writing tests link in the left sidebar
+    action: click
+    selector: role=link[name='Writing tests'] # REVIEW: sidebar may render multiple links; .first() may be needed
+    assertions:
+      - type: url
+        expected: https://playwright.dev/docs/writing-tests
+      - type: text
+        selector: role=heading[name='Writing tests']
+        expected: Writing tests

@@ -1,0 +1,25 @@
+name: playwright-docs-get-started-happy-path
+description: >
+  Verifies that clicking "Get started" on the Playwright homepage navigates to the Installation docs page.
+
+config:
+  browser: chromium
+  baseURL: https://playwright.dev
+  headless: true
+
+steps:
+  - id: navigate_homepage
+    description: Open the Playwright homepage
+    action: goto
+    url: https://playwright.dev
+
+  - id: click_get_started
+    description: Click the primary "Get started" link in the hero section
+    action: click
+    selector: "role=link[name='Get started']" # REVIEW: two "Get started" links may exist (hero + navbar); nth:0 targets the first match
+    assertions:
+      - type: url
+        contains: /docs/intro
+      - type: visible
+        selector: "role=heading[name='Installation']"
+        expected: "Installation"

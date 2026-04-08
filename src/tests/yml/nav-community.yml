@@ -1,0 +1,23 @@
+name: nav community
+description: >
+  Verify clicking the Community nav link navigates to the Community welcome page.
+config:
+  browser: chromium
+  baseURL: https://playwright.dev
+  headless: true
+steps:
+  - id: goto_homepage
+    description: Navigate to the Playwright homepage
+    action: goto
+    url: https://playwright.dev
+
+  - id: click_community_nav
+    description: Click the Community link in the top navigation bar
+    action: click
+    selector: role=link[name='Community']
+    assertions:
+      - type: url
+        expected: https://playwright.dev/community/welcome
+      - type: text
+        selector: role=heading[name='Welcome']
+        expected: Welcome

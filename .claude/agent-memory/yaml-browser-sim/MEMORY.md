@@ -1,0 +1,1 @@
+- [External site YAML simulation patterns](project_external_site_patterns.md) — playwright.dev selectors, title assertion workaround, schema applies to any site

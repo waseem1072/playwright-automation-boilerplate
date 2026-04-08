@@ -1,0 +1,40 @@
+feature: "Docs Sidebar Navigation - Web Server Page"
+description: >
+  Verify that navigating to the docs intro page and clicking the "Web server"
+  sidebar link loads the Web server page at the correct URL with the correct
+  heading and page title.
+tags:
+  - "@docs"
+  - "@smoke"
+  - "@positive"
+
+scenarios:
+  - id: "TC-005"
+    title: "Verify Web server page content via docs sidebar"
+    path: "happy-path"
+    page_objects:
+      - "PlaywrightDocsPage"
+    steps:
+      given:
+        - "The browser is configured with empty storage state (no cookies, no origins)"
+        - "The user navigates to the docs intro page at https://playwright.dev/docs/intro via PlaywrightDocsPage.navigateTo()"
+        - "The Installation h1 heading is visible on the page"
+      when:
+        - "The user clicks the 'Web server' sidebar link via PlaywrightDocsPage.clickSidebarLink('Web server')"
+      then:
+        - "The page URL is exactly 'https://playwright.dev/docs/test-webserver'"
+        - "The h1 heading with the text 'Web server' is visible on the page"
+        - "The document title contains the text 'Web server'"
+    validations:
+      - "No navigation error or 404 response occurs after clicking the sidebar link"
+      - "The sidebar link resolves via exact name match — PlaywrightDocsPage.clickSidebarLink uses exact: true"
+      - "The URL does not retain the /docs/intro path after navigation"
+    notes: >
+      The precondition navigates directly to /docs/intro via PlaywrightDocsPage.navigateTo()
+      rather than clicking the Docs nav link from the homepage — this is the established project
+      pattern for docs sidebar tests (see docs-writing-tests.yml). The raw test case calls for
+      clicking the Docs nav link first, but this approach is equivalent and more stable.
+      PlaywrightDocsPage does not currently have a webServerHeading getter; the TypeScript
+      generator will need to add one or assert via page.getByRole('heading', { name: 'Web server', level: 1 }).
+      The sidebar link name 'Web server' is assumed to match exactly the link text rendered in the
+      left navigation — verify against live site if the link text differs (e.g., 'Webserver' or 'Web Server').

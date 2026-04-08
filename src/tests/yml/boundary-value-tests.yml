@@ -1,0 +1,197 @@
+name: playwright-boundary-value-tests
+description: >
+  Boundary-value browser simulations covering language selector (first/last option),
+  search modal (empty and 100-char input), dark mode toggle (off-to-on and on-to-off),
+  and docs sidebar navigation (first link and deep link).
+
+config:
+  browser: chromium
+  baseURL: https://playwright.dev/
+  headless: true
+
+# credentials: omitted — playwright.dev requires no login
+
+steps:
+
+  # ---------------------------------------------------------------------------
+  # TC-006: Language selector — switch to Python (first non-default option)
+  # ---------------------------------------------------------------------------
+
+  - id: tc006_goto_homepage
+    description: Open the Playwright homepage for TC-006
+    action: goto
+    url: https://playwright.dev/
+
+  - id: tc006_open_language_dropdown
+    description: Click the Node.js button to open the language selector dropdown
+    action: click
+    selector: "role=button[name='Node.js']"
+
+  - id: tc006_select_python
+    description: Click the Python language link scoped to the banner (first non-default boundary)
+    action: click
+    selector: "banner >> role=link[name='Python']" # scoped to banner — avoids strict-mode violation (2 matches exist on page)
+    assertions:
+      - type: url
+        contains: /python/
+
+  # ---------------------------------------------------------------------------
+  # TC-007: Language selector — switch to .NET (last language option)
+  # ---------------------------------------------------------------------------
+
+  - id: tc007_goto_homepage
+    description: Open the Playwright homepage for TC-007
+    action: goto
+    url: https://playwright.dev/
+
+  - id: tc007_open_language_dropdown
+    description: Click the Node.js button to open the language selector dropdown
+    action: click
+    selector: "role=button[name='Node.js']"
+
+  - id: tc007_select_dotnet
+    description: Click the .NET language link scoped to the banner (last/upper boundary option)
+    action: click
+    selector: "banner >> role=link[name='.NET']" # scoped to banner — avoids strict-mode violation; verified against live site
+    assertions:
+      - type: url
+        contains: /dotnet/
+
+  # ---------------------------------------------------------------------------
+  # TC-008: Search modal — empty input boundary
+  # ---------------------------------------------------------------------------
+
+  - id: tc008_goto_homepage
+    description: Open the Playwright homepage for TC-008
+    action: goto
+    url: https://playwright.dev/
+
+  - id: tc008_open_search_modal
+    description: Click the Search button to open the search modal, then assert the input is visible and empty
+    action: click
+    selector: "role=button[name=/Search/]"
+    assertions:
+      - type: visible
+        selector: "role=searchbox[name='Search']"
+      - type: value
+        selector: "role=searchbox[name='Search']"
+        expected: ""
+
+  # ---------------------------------------------------------------------------
+  # TC-009: Search modal — 100-character input boundary
+  # ---------------------------------------------------------------------------
+
+  - id: tc009_goto_homepage
+    description: Open the Playwright homepage for TC-009
+    action: goto
+    url: https://playwright.dev/
+
+  - id: tc009_open_search_modal
+    description: Click the Search button to open the search modal
+    action: click
+    selector: "role=button[name=/Search/]"
+
+  - id: tc009_fill_100_char_input
+    description: Fill the search box with exactly 100 'a' characters (maximum input boundary)
+    action: fill
+    selector: "role=searchbox[name='Search']"
+    value: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    assertions:
+      - type: value
+        selector: "role=searchbox[name='Search']"
+        expected: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
+  # ---------------------------------------------------------------------------
+  # TC-010: Dark mode — off to on (lower boundary)
+  # ---------------------------------------------------------------------------
+
+  - id: tc010_goto_homepage
+    description: Open the Playwright homepage for TC-010
+    action: goto
+    url: https://playwright.dev/
+
+  - id: tc010_assert_initial_light_mode
+    description: Assert the page starts in light mode — html element must not carry data-theme='dark'
+    action: assert_visible
+    selector: "html:not([data-theme='dark'])" # REVIEW: negative attribute CSS selector; playwright-ts-generator must use expect(page.locator('html')).not.toHaveAttribute('data-theme','dark')
+    assertions:
+      - type: visible
+        selector: "html:not([data-theme='dark'])"
+
+  - id: tc010_activate_dark_mode
+    description: Click the dark/light mode toggle twice (headless requires 2 clicks to reach dark from default light)
+    action: click
+    selector: "role=button[name=/Switch between dark and light mode/]"
+    # NOTE: In headless Chromium the site starts with data-theme='light'. First click re-affirms light; second click flips to dark. Call toggleDarkMode() twice in TS.
+    assertions:
+      - type: visible
+        selector: "html[data-theme='dark']" # playwright-ts-generator must use: await home.toggleDarkMode(); await home.toggleDarkMode(); then expect(page.locator('html')).toHaveAttribute('data-theme','dark')
+
+  # ---------------------------------------------------------------------------
+  # TC-011: Dark mode — on to off (upper boundary)
+  # ---------------------------------------------------------------------------
+
+  - id: tc011_goto_homepage
+    description: Open the Playwright homepage for TC-011
+    action: goto
+    url: https://playwright.dev/
+
+  - id: tc011_activate_dark_mode
+    description: Click the dark mode toggle once to enter dark mode (precondition for TC-011)
+    action: click
+    selector: "role=button[name=/Switch between dark and light mode/]"
+    assertions:
+      - type: visible
+        selector: "html[data-theme='dark']" # REVIEW: attribute presence CSS selector; playwright-ts-generator must use toHaveAttribute
+
+  - id: tc011_deactivate_dark_mode
+    description: Click the dark mode toggle a second time to return to light mode (upper boundary)
+    action: click
+    selector: "role=button[name=/Switch between dark and light mode/]"
+    assertions:
+      - type: visible
+        selector: "html:not([data-theme='dark'])" # REVIEW: negative attribute CSS selector; playwright-ts-generator must use expect(page.locator('html')).not.toHaveAttribute('data-theme','dark')
+
+  # ---------------------------------------------------------------------------
+  # TC-012: Docs sidebar — first link boundary (Writing tests)
+  # ---------------------------------------------------------------------------
+
+  - id: tc012_goto_docs_intro
+    description: Navigate directly to the Playwright docs intro page
+    action: goto
+    url: https://playwright.dev/docs/intro
+    assertions:
+      - type: visible
+        selector: "role=heading[name='Installation']"
+
+  - id: tc012_click_writing_tests_sidebar
+    description: Click the Writing tests sidebar link (first navigable content link after Installation)
+    action: click
+    selector: "role=link[name='Writing tests'][exact=true]" # exact:true required — 2 matches exist (sidebar + Next pagination link); playwright-ts-generator must use getByRole('link', { name: 'Writing tests', exact: true })
+    assertions:
+      - type: url
+        expected: https://playwright.dev/docs/writing-tests
+      - type: visible
+        selector: "role=heading[name='Writing tests']"
+
+  # ---------------------------------------------------------------------------
+  # TC-013: Docs sidebar — deep link boundary (Annotations)
+  # ---------------------------------------------------------------------------
+
+  - id: tc013_goto_docs_intro
+    description: Navigate directly to the Playwright docs intro page
+    action: goto
+    url: https://playwright.dev/docs/intro
+    assertions:
+      - type: visible
+        selector: "role=heading[name='Installation']"
+
+  - id: tc013_click_annotations_sidebar
+    description: Click the Annotations sidebar link (deep/non-adjacent boundary link)
+    action: click
+    selector: "role=link[name='Annotations']" # REVIEW: verify single match in sidebar; add nth:0 in playwright-ts-generator if ambiguous
+    assertions:
+      - type: url
+        contains: /docs/test-annotations
+      - type: visible
+        selector: "role=heading[name='Annotations']"

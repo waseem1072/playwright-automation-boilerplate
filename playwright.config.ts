@@ -27,13 +27,11 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [["html"], ["./src/utils/teamsReporter.ts"]],
+  reporter: [["html"], ["./src/reporters/teamsReporter.ts"]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    baseURL:
-     //"http://dev-edcs-v6-1531592723.ap-southeast-1.elb.amazonaws.com/feauth/",
-    "http://qa-edcs-v1-1604665350.ap-southeast-1.elb.amazonaws.com/feauth/",
+    baseURL: 'https://playwright.dev/',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     actionTimeout: 550000, // 40 seconds
