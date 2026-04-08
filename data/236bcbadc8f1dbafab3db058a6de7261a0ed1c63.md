@@ -1,0 +1,701 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - region "Skip to main content":
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#__docusaurus_skipToContent_fallback"
+  - navigation "Main" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - link "Playwright logo Playwright" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img "Playwright logo" [ref=e9]
+          - generic [ref=e10]: Playwright
+        - link "Docs" [ref=e11] [cursor=pointer]:
+          - /url: /docs/intro
+        - link "API" [ref=e12] [cursor=pointer]:
+          - /url: /docs/api/class-playwright
+        - button "Node.js" [ref=e14] [cursor=pointer]
+        - link "Community" [ref=e15] [cursor=pointer]:
+          - /url: /community/welcome
+      - generic [ref=e16]:
+        - link "GitHub repository" [ref=e17] [cursor=pointer]:
+          - /url: https://github.com/microsoft/playwright
+        - link "Discord server" [ref=e18] [cursor=pointer]:
+          - /url: https://aka.ms/playwright/discord
+        - button "Switch between dark and light mode (currently system mode)" [ref=e20] [cursor=pointer]:
+          - img [ref=e21]
+        - button "Search (Ctrl+K)" [ref=e24] [cursor=pointer]:
+          - generic [ref=e25]:
+            - img [ref=e26]
+            - generic [ref=e28]: Search
+          - generic [ref=e29]:
+            - img [ref=e31]
+            - generic [ref=e33]: K
+  - generic [ref=e36]:
+    - complementary [ref=e37]:
+      - navigation "Docs sidebar" [ref=e40]:
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - button "Getting Started" [expanded] [ref=e44] [cursor=pointer]
+            - list [ref=e45]:
+              - listitem [ref=e46]:
+                - link "Installation" [ref=e47] [cursor=pointer]:
+                  - /url: /docs/intro
+              - listitem [ref=e48]:
+                - link "Writing tests" [ref=e49] [cursor=pointer]:
+                  - /url: /docs/writing-tests
+              - listitem [ref=e50]:
+                - link "Generating tests" [ref=e51] [cursor=pointer]:
+                  - /url: /docs/codegen-intro
+              - listitem [ref=e52]:
+                - link "Running and debugging tests" [ref=e53] [cursor=pointer]:
+                  - /url: /docs/running-tests
+              - listitem [ref=e54]:
+                - link "Trace viewer" [ref=e55] [cursor=pointer]:
+                  - /url: /docs/trace-viewer-intro
+              - listitem [ref=e56]:
+                - link "Setting up CI" [ref=e57] [cursor=pointer]:
+                  - /url: /docs/ci-intro
+              - listitem [ref=e58]:
+                - link "VS Code" [ref=e59] [cursor=pointer]:
+                  - /url: /docs/getting-started-vscode
+              - listitem [ref=e60]:
+                - link "Coding agents" [ref=e61] [cursor=pointer]:
+                  - /url: /docs/getting-started-cli
+              - listitem [ref=e62]:
+                - link "Playwright MCP" [ref=e63] [cursor=pointer]:
+                  - /url: /docs/getting-started-mcp
+          - listitem [ref=e64]:
+            - link "Release notes" [ref=e65] [cursor=pointer]:
+              - /url: /docs/release-notes
+          - listitem [ref=e66]:
+            - link "Canary releases" [ref=e67] [cursor=pointer]:
+              - /url: /docs/canary-releases
+          - listitem [ref=e68]:
+            - button "Playwright Test" [expanded] [ref=e70] [cursor=pointer]
+            - list [ref=e71]:
+              - listitem [ref=e72]:
+                - link "Agents" [ref=e73] [cursor=pointer]:
+                  - /url: /docs/test-agents
+              - listitem [ref=e74]:
+                - link "Annotations" [ref=e75] [cursor=pointer]:
+                  - /url: /docs/test-annotations
+              - listitem [ref=e76]:
+                - link "Command line" [ref=e77] [cursor=pointer]:
+                  - /url: /docs/test-cli
+              - listitem [ref=e78]:
+                - link "Configuration" [ref=e79] [cursor=pointer]:
+                  - /url: /docs/test-configuration
+              - listitem [ref=e80]:
+                - link "Configuration (use)" [ref=e81] [cursor=pointer]:
+                  - /url: /docs/test-use-options
+              - listitem [ref=e82]:
+                - link "Emulation" [ref=e83] [cursor=pointer]:
+                  - /url: /docs/emulation
+              - listitem [ref=e84]:
+                - link "Fixtures" [ref=e85] [cursor=pointer]:
+                  - /url: /docs/test-fixtures
+              - listitem [ref=e86]:
+                - link "Global setup and teardown" [ref=e87] [cursor=pointer]:
+                  - /url: /docs/test-global-setup-teardown
+              - listitem [ref=e88]:
+                - link "Parallelism" [ref=e89] [cursor=pointer]:
+                  - /url: /docs/test-parallel
+              - listitem [ref=e90]:
+                - link "Parameterize tests" [ref=e91] [cursor=pointer]:
+                  - /url: /docs/test-parameterize
+              - listitem [ref=e92]:
+                - link "Projects" [ref=e93] [cursor=pointer]:
+                  - /url: /docs/test-projects
+              - listitem [ref=e94]:
+                - link "Reporters" [ref=e95] [cursor=pointer]:
+                  - /url: /docs/test-reporters
+              - listitem [ref=e96]:
+                - link "Retries" [ref=e97] [cursor=pointer]:
+                  - /url: /docs/test-retries
+              - listitem [ref=e98]:
+                - link "Sharding" [ref=e99] [cursor=pointer]:
+                  - /url: /docs/test-sharding
+              - listitem [ref=e100]:
+                - link "Timeouts" [ref=e101] [cursor=pointer]:
+                  - /url: /docs/test-timeouts
+              - listitem [ref=e102]:
+                - link "TypeScript" [ref=e103] [cursor=pointer]:
+                  - /url: /docs/test-typescript
+              - listitem [ref=e104]:
+                - link "UI Mode" [ref=e105] [cursor=pointer]:
+                  - /url: /docs/test-ui-mode
+              - listitem [ref=e106]:
+                - link "Web server" [ref=e107] [cursor=pointer]:
+                  - /url: /docs/test-webserver
+          - listitem [ref=e108]:
+            - button "Guides" [expanded] [ref=e110] [cursor=pointer]
+            - list [ref=e111]:
+              - listitem [ref=e112]:
+                - link "Library" [ref=e113] [cursor=pointer]:
+                  - /url: /docs/library
+              - listitem [ref=e114]:
+                - link "Accessibility testing" [ref=e115] [cursor=pointer]:
+                  - /url: /docs/accessibility-testing
+              - listitem [ref=e116]:
+                - link "Actions" [ref=e117] [cursor=pointer]:
+                  - /url: /docs/input
+              - listitem [ref=e118]:
+                - link "Assertions" [ref=e119] [cursor=pointer]:
+                  - /url: /docs/test-assertions
+              - listitem [ref=e120]:
+                - link "API testing" [ref=e121] [cursor=pointer]:
+                  - /url: /docs/api-testing
+              - listitem [ref=e122]:
+                - link "Authentication" [ref=e123] [cursor=pointer]:
+                  - /url: /docs/auth
+              - listitem [ref=e124]:
+                - link "Auto-waiting" [ref=e125] [cursor=pointer]:
+                  - /url: /docs/actionability
+              - listitem [ref=e126]:
+                - link "Best Practices" [ref=e127] [cursor=pointer]:
+                  - /url: /docs/best-practices
+              - listitem [ref=e128]:
+                - link "Browsers" [ref=e129] [cursor=pointer]:
+                  - /url: /docs/browsers
+              - listitem [ref=e130]:
+                - link "Chrome extensions" [ref=e131] [cursor=pointer]:
+                  - /url: /docs/chrome-extensions
+              - listitem [ref=e132]:
+                - link "Clock" [ref=e133] [cursor=pointer]:
+                  - /url: /docs/clock
+              - listitem [ref=e134]:
+                - link "Components (experimental)" [ref=e135] [cursor=pointer]:
+                  - /url: /docs/test-components
+              - listitem [ref=e136]:
+                - link "Debugging Tests" [ref=e137] [cursor=pointer]:
+                  - /url: /docs/debug
+              - listitem [ref=e138]:
+                - link "Dialogs" [ref=e139] [cursor=pointer]:
+                  - /url: /docs/dialogs
+              - listitem [ref=e140]:
+                - link "Downloads" [ref=e141] [cursor=pointer]:
+                  - /url: /docs/downloads
+              - listitem [ref=e142]:
+                - link "Evaluating JavaScript" [ref=e143] [cursor=pointer]:
+                  - /url: /docs/evaluating
+              - listitem [ref=e144]:
+                - link "Events" [ref=e145] [cursor=pointer]:
+                  - /url: /docs/events
+              - listitem [ref=e146]:
+                - link "Extensibility" [ref=e147] [cursor=pointer]:
+                  - /url: /docs/extensibility
+              - listitem [ref=e148]:
+                - link "Frames" [ref=e149] [cursor=pointer]:
+                  - /url: /docs/frames
+              - listitem [ref=e150]:
+                - link "Handles" [ref=e151] [cursor=pointer]:
+                  - /url: /docs/handles
+              - listitem [ref=e152]:
+                - link "Isolation" [ref=e153] [cursor=pointer]:
+                  - /url: /docs/browser-contexts
+              - listitem [ref=e154]:
+                - link "Locators" [ref=e155] [cursor=pointer]:
+                  - /url: /docs/locators
+              - listitem [ref=e156]:
+                - link "Mock APIs" [ref=e157] [cursor=pointer]:
+                  - /url: /docs/mock
+              - listitem [ref=e158]:
+                - link "Mock browser APIs" [ref=e159] [cursor=pointer]:
+                  - /url: /docs/mock-browser-apis
+              - listitem [ref=e160]:
+                - link "Navigations" [ref=e161] [cursor=pointer]:
+                  - /url: /docs/navigations
+              - listitem [ref=e162]:
+                - link "Network" [ref=e163] [cursor=pointer]:
+                  - /url: /docs/network
+              - listitem [ref=e164]:
+                - link "Other locators" [ref=e165] [cursor=pointer]:
+                  - /url: /docs/other-locators
+              - listitem [ref=e166]:
+                - link "Pages" [ref=e167] [cursor=pointer]:
+                  - /url: /docs/pages
+              - listitem [ref=e168]:
+                - link "Page object models" [ref=e169] [cursor=pointer]:
+                  - /url: /docs/pom
+              - listitem [ref=e170]:
+                - link "Screenshots" [ref=e171] [cursor=pointer]:
+                  - /url: /docs/screenshots
+              - listitem [ref=e172]:
+                - link "Service Workers" [ref=e173] [cursor=pointer]:
+                  - /url: /docs/service-workers
+              - listitem [ref=e174]:
+                - link "Snapshot testing" [ref=e175] [cursor=pointer]:
+                  - /url: /docs/aria-snapshots
+              - listitem [ref=e176]:
+                - link "Test generator" [ref=e177] [cursor=pointer]:
+                  - /url: /docs/codegen
+              - listitem [ref=e178]:
+                - link "Touch events (legacy)" [ref=e179] [cursor=pointer]:
+                  - /url: /docs/touch-events
+              - listitem [ref=e180]:
+                - link "Trace viewer" [ref=e181] [cursor=pointer]:
+                  - /url: /docs/trace-viewer
+              - listitem [ref=e182]:
+                - link "Videos" [ref=e183] [cursor=pointer]:
+                  - /url: /docs/videos
+              - listitem [ref=e184]:
+                - link "Visual comparisons" [ref=e185] [cursor=pointer]:
+                  - /url: /docs/test-snapshots
+              - listitem [ref=e186]:
+                - link "WebView2" [ref=e187] [cursor=pointer]:
+                  - /url: /docs/webview2
+          - listitem [ref=e188]:
+            - button "Migration" [ref=e190] [cursor=pointer]
+          - listitem [ref=e191]:
+            - button "Integrations" [ref=e193] [cursor=pointer]
+          - listitem [ref=e194]:
+            - link "Supported languages" [ref=e195] [cursor=pointer]:
+              - /url: /docs/languages
+    - main [ref=e196]:
+      - generic [ref=e198]:
+        - generic [ref=e200]:
+          - article [ref=e201]:
+            - navigation "Breadcrumbs" [ref=e202]:
+              - list [ref=e203]:
+                - listitem [ref=e204]:
+                  - link "Home page" [ref=e205] [cursor=pointer]:
+                    - /url: /
+                    - img [ref=e206]
+                - listitem [ref=e208]:
+                  - generic [ref=e209]: Playwright Test
+                - listitem [ref=e210]:
+                  - generic [ref=e211]: Web server
+            - generic [ref=e212]:
+              - heading "Web server" [level=1] [ref=e214]
+              - heading "IntroductionDirect link to Introduction" [level=2] [ref=e215]:
+                - text: Introduction
+                - link "Direct link to Introduction" [ref=e216] [cursor=pointer]:
+                  - /url: "#introduction"
+                  - text: "#"
+              - paragraph [ref=e217]:
+                - text: Playwright comes with a
+                - code [ref=e218]: webServer
+                - text: option in the config file which gives you the ability to launch a local dev server before running your tests. This is ideal for when writing your tests during development and when you don't have a staging or production url to test against.
+              - heading "Configuring a web serverDirect link to Configuring a web server" [level=2] [ref=e219]:
+                - text: Configuring a web server
+                - link "Direct link to Configuring a web server" [ref=e220] [cursor=pointer]:
+                  - /url: "#configuring-a-web-server"
+                  - text: "#"
+              - paragraph [ref=e221]:
+                - text: Use the
+                - code [ref=e222]: webServer
+                - text: property in your Playwright config to launch a development web server during the tests.
+              - generic [ref=e223]:
+                - generic [ref=e224]: playwright.config.ts
+                - generic [ref=e225]:
+                  - code [ref=e227]:
+                    - generic [ref=e228]: "import { defineConfig } from '@playwright/test';"
+                    - generic [ref=e229]: "export default defineConfig({"
+                    - generic [ref=e230]: // Run your local dev server before starting the tests
+                    - generic [ref=e231]: "webServer: {"
+                    - generic [ref=e232]: "command: 'npm run start',"
+                    - generic [ref=e233]: "url: 'http://localhost:3000',"
+                    - generic [ref=e234]: "reuseExistingServer: !process.env.CI,"
+                    - generic [ref=e235]: "stdout: 'ignore',"
+                    - generic [ref=e236]: "stderr: 'pipe',"
+                    - generic [ref=e237]: "},"
+                    - generic [ref=e238]: "});"
+                  - button "Copy code to clipboard" [ref=e240] [cursor=pointer]:
+                    - generic [ref=e241]:
+                      - img [ref=e242]
+                      - img [ref=e244]
+              - table [ref=e246]:
+                - rowgroup [ref=e247]:
+                  - row "Property Description" [ref=e248]:
+                    - columnheader "Property" [ref=e249]
+                    - columnheader "Description" [ref=e250]
+                - rowgroup [ref=e251]:
+                  - row "testConfig.webServer Launch a development web server (or multiple) during the tests." [ref=e252]:
+                    - cell "testConfig.webServer" [ref=e253]:
+                      - link "testConfig.webServer" [ref=e254] [cursor=pointer]:
+                        - /url: /docs/api/class-testconfig#test-config-web-server
+                    - cell "Launch a development web server (or multiple) during the tests." [ref=e255]
+                  - row "command Shell command to start the local dev server of your app." [ref=e256]:
+                    - cell "command" [ref=e257]:
+                      - code [ref=e258]: command
+                    - cell "Shell command to start the local dev server of your app." [ref=e259]
+                  - row "cwd Current working directory of the spawned process, defaults to the directory of the configuration file." [ref=e260]:
+                    - cell "cwd" [ref=e261]:
+                      - code [ref=e262]: cwd
+                    - cell "Current working directory of the spawned process, defaults to the directory of the configuration file." [ref=e263]
+                  - row "env Environment variables for the command. Defaults to inheriting process.env with PLAYWRIGHT_TEST=1 added." [ref=e264]:
+                    - cell "env" [ref=e265]:
+                      - code [ref=e266]: env
+                    - cell "Environment variables for the command. Defaults to inheriting process.env with PLAYWRIGHT_TEST=1 added." [ref=e267]:
+                      - text: Environment variables for the command. Defaults to inheriting
+                      - code [ref=e268]: process.env
+                      - text: with
+                      - code [ref=e269]: PLAYWRIGHT_TEST=1
+                      - text: added.
+                  - 'row "gracefulShutdown How to shut down the process. If unspecified, the process group is forcefully SIGKILLed. If set to { signal: ''SIGTERM'', timeout: 500 }, the process group is sent a SIGTERM signal, followed by SIGKILL if it doesn''t exit within 500ms. You can also use SIGINT as the signal instead. A 0 timeout means no SIGKILL will be sent. Windows doesn''t support SIGTERM and SIGINT signals, so this option is ignored on Windows. Note that shutting down a Docker container requires SIGTERM." [ref=e270]':
+                    - cell "gracefulShutdown" [ref=e271]:
+                      - code [ref=e272]: gracefulShutdown
+                    - 'cell "How to shut down the process. If unspecified, the process group is forcefully SIGKILLed. If set to { signal: ''SIGTERM'', timeout: 500 }, the process group is sent a SIGTERM signal, followed by SIGKILL if it doesn''t exit within 500ms. You can also use SIGINT as the signal instead. A 0 timeout means no SIGKILL will be sent. Windows doesn''t support SIGTERM and SIGINT signals, so this option is ignored on Windows. Note that shutting down a Docker container requires SIGTERM." [ref=e273]':
+                      - text: How to shut down the process. If unspecified, the process group is forcefully
+                      - code [ref=e274]: SIGKILL
+                      - text: ed. If set to
+                      - code [ref=e275]: "{ signal: 'SIGTERM', timeout: 500 }"
+                      - text: ", the process group is sent a"
+                      - code [ref=e276]: SIGTERM
+                      - text: signal, followed by
+                      - code [ref=e277]: SIGKILL
+                      - text: if it doesn't exit within 500ms. You can also use
+                      - code [ref=e278]: SIGINT
+                      - text: as the signal instead. A
+                      - code [ref=e279]: "0"
+                      - text: timeout means no
+                      - code [ref=e280]: SIGKILL
+                      - text: will be sent. Windows doesn't support
+                      - code [ref=e281]: SIGTERM
+                      - text: and
+                      - code [ref=e282]: SIGINT
+                      - text: signals, so this option is ignored on Windows. Note that shutting down a Docker container requires
+                      - code [ref=e283]: SIGTERM
+                      - text: .
+                  - row "ignoreHTTPSErrors Whether to ignore HTTPS errors when fetching the url. Defaults to false." [ref=e284]:
+                    - cell "ignoreHTTPSErrors" [ref=e285]:
+                      - code [ref=e286]: ignoreHTTPSErrors
+                    - cell "Whether to ignore HTTPS errors when fetching the url. Defaults to false." [ref=e287]:
+                      - text: Whether to ignore HTTPS errors when fetching the
+                      - code [ref=e288]: url
+                      - text: . Defaults to
+                      - code [ref=e289]: "false"
+                      - text: .
+                  - row "name Specifies a custom name for the web server. This name will be prefixed to log messages. Defaults to [WebServer]." [ref=e290]:
+                    - cell "name" [ref=e291]:
+                      - code [ref=e292]: name
+                    - cell "Specifies a custom name for the web server. This name will be prefixed to log messages. Defaults to [WebServer]." [ref=e293]:
+                      - text: Specifies a custom name for the web server. This name will be prefixed to log messages. Defaults to
+                      - code [ref=e294]: "[WebServer]"
+                      - text: .
+                  - row "port Deprecated. Use url instead. The port that your http server is expected to appear on. It does wait until it accepts connections. Either port or url should be specified." [ref=e295]:
+                    - cell "port" [ref=e296]:
+                      - code [ref=e297]: port
+                    - cell "Deprecated. Use url instead. The port that your http server is expected to appear on. It does wait until it accepts connections. Either port or url should be specified." [ref=e298]:
+                      - strong [ref=e299]: Deprecated
+                      - text: . Use
+                      - code [ref=e300]: url
+                      - text: instead. The port that your http server is expected to appear on. It does wait until it accepts connections. Either
+                      - code [ref=e301]: port
+                      - text: or
+                      - code [ref=e302]: url
+                      - text: should be specified.
+                  - row "reuseExistingServer If true, it will re-use an existing server on the port or url when available. If no server is running on that port or url, it will run the command to start a new server. If false, it will throw if an existing process is listening on the port or url. This should be commonly set to !process.env.CI to allow the local dev server when running tests locally." [ref=e303]:
+                    - cell "reuseExistingServer" [ref=e304]:
+                      - code [ref=e305]: reuseExistingServer
+                    - cell "If true, it will re-use an existing server on the port or url when available. If no server is running on that port or url, it will run the command to start a new server. If false, it will throw if an existing process is listening on the port or url. This should be commonly set to !process.env.CI to allow the local dev server when running tests locally." [ref=e306]:
+                      - text: If
+                      - code [ref=e307]: "true"
+                      - text: ", it will re-use an existing server on the"
+                      - code [ref=e308]: port
+                      - text: or
+                      - code [ref=e309]: url
+                      - text: when available. If no server is running on that
+                      - code [ref=e310]: port
+                      - text: or
+                      - code [ref=e311]: url
+                      - text: ", it will run the command to start a new server. If"
+                      - code [ref=e312]: "false"
+                      - text: ", it will throw if an existing process is listening on the"
+                      - code [ref=e313]: port
+                      - text: or
+                      - code [ref=e314]: url
+                      - text: . This should be commonly set to
+                      - code [ref=e315]: "!process.env.CI"
+                      - text: to allow the local dev server when running tests locally.
+                  - row "stderr Whether to pipe the stderr of the command to the process stderr or ignore it. Defaults to \"pipe\"." [ref=e316]:
+                    - cell "stderr" [ref=e317]:
+                      - code [ref=e318]: stderr
+                    - cell "Whether to pipe the stderr of the command to the process stderr or ignore it. Defaults to \"pipe\"." [ref=e319]:
+                      - text: Whether to pipe the stderr of the command to the process stderr or ignore it. Defaults to
+                      - code [ref=e320]: "\"pipe\""
+                      - text: .
+                  - row "stdout If \"pipe\", it will pipe the stdout of the command to the process stdout. If \"ignore\", it will ignore the stdout of the command. Default to \"ignore\"." [ref=e321]:
+                    - cell "stdout" [ref=e322]:
+                      - code [ref=e323]: stdout
+                    - cell "If \"pipe\", it will pipe the stdout of the command to the process stdout. If \"ignore\", it will ignore the stdout of the command. Default to \"ignore\"." [ref=e324]:
+                      - text: If
+                      - code [ref=e325]: "\"pipe\""
+                      - text: ", it will pipe the stdout of the command to the process stdout. If"
+                      - code [ref=e326]: "\"ignore\""
+                      - text: ", it will ignore the stdout of the command. Default to"
+                      - code [ref=e327]: "\"ignore\""
+                      - text: .
+                  - row "timeout How long to wait for the process to start up and be available in milliseconds. Defaults to 60000." [ref=e328]:
+                    - cell "timeout" [ref=e329]:
+                      - code [ref=e330]: timeout
+                    - cell "How long to wait for the process to start up and be available in milliseconds. Defaults to 60000." [ref=e331]
+                  - row "url URL of your http server that is expected to return a 2xx, 3xx, 400, 401, 402, or 403 status code when the server is ready to accept connections. Either port or url should be specified. If both url and wait are specified, the server is considered started when at least one of the conditions is met." [ref=e332]:
+                    - cell "url" [ref=e333]:
+                      - code [ref=e334]: url
+                    - cell "URL of your http server that is expected to return a 2xx, 3xx, 400, 401, 402, or 403 status code when the server is ready to accept connections. Either port or url should be specified. If both url and wait are specified, the server is considered started when at least one of the conditions is met." [ref=e335]:
+                      - text: URL of your http server that is expected to return a 2xx, 3xx, 400, 401, 402, or 403 status code when the server is ready to accept connections. Either
+                      - code [ref=e336]: port
+                      - text: or
+                      - code [ref=e337]: url
+                      - text: should be specified. If both
+                      - code [ref=e338]: url
+                      - text: and
+                      - code [ref=e339]: wait
+                      - text: are specified, the server is considered started when at least one of the conditions is met.
+                  - row "wait Consider command started only when given output has been produced. Takes an object with optional stdout and/or stderr regular expressions. Named capture groups in the regex are stored in the environment, for example /Listening on port (?<my_server_port>\\d+)/ will store the port number in process.env['MY_SERVER_PORT']. If both url and wait are specified, the server is considered started when at least one of the conditions is met." [ref=e340]:
+                    - cell "wait" [ref=e341]:
+                      - code [ref=e342]: wait
+                    - cell "Consider command started only when given output has been produced. Takes an object with optional stdout and/or stderr regular expressions. Named capture groups in the regex are stored in the environment, for example /Listening on port (?<my_server_port>\\d+)/ will store the port number in process.env['MY_SERVER_PORT']. If both url and wait are specified, the server is considered started when at least one of the conditions is met." [ref=e343]:
+                      - text: Consider command started only when given output has been produced. Takes an object with optional
+                      - code [ref=e344]: stdout
+                      - text: and/or
+                      - code [ref=e345]: stderr
+                      - text: regular expressions. Named capture groups in the regex are stored in the environment, for example
+                      - code [ref=e346]: /Listening on port (?<my_server_port>\d+)/
+                      - text: will store the port number in
+                      - code [ref=e347]: process.env['MY_SERVER_PORT']
+                      - text: . If both
+                      - code [ref=e348]: url
+                      - text: and
+                      - code [ref=e349]: wait
+                      - text: are specified, the server is considered started when at least one of the conditions is met.
+              - heading "Adding a server timeoutDirect link to Adding a server timeout" [level=2] [ref=e350]:
+                - text: Adding a server timeout
+                - link "Direct link to Adding a server timeout" [ref=e351] [cursor=pointer]:
+                  - /url: "#adding-a-server-timeout"
+                  - text: "#"
+              - paragraph [ref=e352]: Webservers can sometimes take longer to boot up. In this case, you can increase the timeout to wait for the server to start.
+              - generic [ref=e353]:
+                - generic [ref=e354]: playwright.config.ts
+                - generic [ref=e355]:
+                  - code [ref=e357]:
+                    - generic [ref=e358]: "import { defineConfig } from '@playwright/test';"
+                    - generic [ref=e359]: "export default defineConfig({"
+                    - generic [ref=e360]: // Rest of your config...
+                    - generic [ref=e361]: // Run your local dev server before starting the tests
+                    - generic [ref=e362]: "webServer: {"
+                    - generic [ref=e363]: "command: 'npm run start',"
+                    - generic [ref=e364]: "url: 'http://localhost:3000',"
+                    - generic [ref=e365]: "reuseExistingServer: !process.env.CI,"
+                    - generic [ref=e366]: "timeout: 120 * 1000,"
+                    - generic [ref=e367]: "},"
+                    - generic [ref=e368]: "});"
+                  - button "Copy code to clipboard" [ref=e370] [cursor=pointer]:
+                    - generic [ref=e371]:
+                      - img [ref=e372]
+                      - img [ref=e374]
+              - heading "Adding a baseURLDirect link to Adding a baseURL" [level=2] [ref=e376]:
+                - text: Adding a baseURL
+                - link "Direct link to Adding a baseURL" [ref=e377] [cursor=pointer]:
+                  - /url: "#adding-a-baseurl"
+                  - text: "#"
+              - paragraph [ref=e378]:
+                - text: It is also recommended to specify the
+                - code [ref=e379]: baseURL
+                - text: in the
+                - code [ref=e380]: "use: {}"
+                - text: section of your config, so that tests can use relative urls and you don't have to specify the full URL over and over again.
+              - paragraph [ref=e381]:
+                - text: When using
+                - link "page.goto()" [ref=e382] [cursor=pointer]:
+                  - /url: /docs/api/class-page#page-goto
+                - text: ","
+                - link "page.route()" [ref=e383] [cursor=pointer]:
+                  - /url: /docs/api/class-page#page-route
+                - text: ","
+                - link "page.waitForURL()" [ref=e384] [cursor=pointer]:
+                  - /url: /docs/api/class-page#page-wait-for-url
+                - text: ","
+                - link "page.waitForRequest()" [ref=e385] [cursor=pointer]:
+                  - /url: /docs/api/class-page#page-wait-for-request
+                - text: ", or"
+                - link "page.waitForResponse()" [ref=e386] [cursor=pointer]:
+                  - /url: /docs/api/class-page#page-wait-for-response
+                - text: it takes the base URL in consideration by using the
+                - link "URL()" [ref=e387] [cursor=pointer]:
+                  - /url: https://developer.mozilla.org/en-US/docs/Web/API/URL/URL
+                  - code [ref=e388]: URL()
+                - text: constructor for building the corresponding URL. For Example, by setting the baseURL to
+                - code [ref=e389]: http://localhost:3000
+                - text: and navigating to
+                - code [ref=e390]: /login
+                - text: in your tests, Playwright will run the test using
+                - code [ref=e391]: http://localhost:3000/login
+                - text: .
+              - generic [ref=e392]:
+                - generic [ref=e393]: playwright.config.ts
+                - generic [ref=e394]:
+                  - code [ref=e396]:
+                    - generic [ref=e397]: "import { defineConfig } from '@playwright/test';"
+                    - generic [ref=e398]: "export default defineConfig({"
+                    - generic [ref=e399]: // Rest of your config...
+                    - generic [ref=e400]: // Run your local dev server before starting the tests
+                    - generic [ref=e401]: "webServer: {"
+                    - generic [ref=e402]: "command: 'npm run start',"
+                    - generic [ref=e403]: "url: 'http://localhost:3000',"
+                    - generic [ref=e404]: "reuseExistingServer: !process.env.CI,"
+                    - generic [ref=e405]: "},"
+                    - generic [ref=e406]: "use: {"
+                    - generic [ref=e407]: "baseURL: 'http://localhost:3000',"
+                    - generic [ref=e408]: "},"
+                    - generic [ref=e409]: "});"
+                  - button "Copy code to clipboard" [ref=e411] [cursor=pointer]:
+                    - generic [ref=e412]:
+                      - img [ref=e413]
+                      - img [ref=e415]
+              - paragraph [ref=e417]: "Now you can use a relative path when navigating the page:"
+              - generic [ref=e418]:
+                - generic [ref=e419]: test.spec.ts
+                - generic [ref=e420]:
+                  - code [ref=e422]:
+                    - generic [ref=e423]: "import { test } from '@playwright/test';"
+                    - generic [ref=e424]: "test('test', async ({ page }) => {"
+                    - generic [ref=e425]: // This will navigate to http://localhost:3000/login
+                    - generic [ref=e426]: await page.goto('./login');
+                    - generic [ref=e427]: "});"
+                  - button "Copy code to clipboard" [ref=e429] [cursor=pointer]:
+                    - generic [ref=e430]:
+                      - img [ref=e431]
+                      - img [ref=e433]
+              - heading "Multiple web serversDirect link to Multiple web servers" [level=2] [ref=e435]:
+                - text: Multiple web servers
+                - link "Direct link to Multiple web servers" [ref=e436] [cursor=pointer]:
+                  - /url: "#multiple-web-servers"
+                  - text: "#"
+              - paragraph [ref=e437]:
+                - text: Multiple web servers (or background processes) can be launched simultaneously by providing an array of
+                - code [ref=e438]: webServer
+                - text: configurations. See
+                - link "testConfig.webServer" [ref=e439] [cursor=pointer]:
+                  - /url: /docs/api/class-testconfig#test-config-web-server
+                - text: for more info.
+              - generic [ref=e440]:
+                - generic [ref=e441]: playwright.config.ts
+                - generic [ref=e442]:
+                  - code [ref=e444]:
+                    - generic [ref=e445]: "import { defineConfig } from '@playwright/test';"
+                    - generic [ref=e446]: "export default defineConfig({"
+                    - generic [ref=e447]: "webServer: ["
+                    - generic [ref=e448]: "{"
+                    - generic [ref=e449]: "command: 'npm run start',"
+                    - generic [ref=e450]: "url: 'http://localhost:3000',"
+                    - generic [ref=e451]: "name: 'Frontend',"
+                    - generic [ref=e452]: "timeout: 120 * 1000,"
+                    - generic [ref=e453]: "reuseExistingServer: !process.env.CI,"
+                    - generic [ref=e454]: "},"
+                    - generic [ref=e455]: "{"
+                    - generic [ref=e456]: "command: 'npm run backend',"
+                    - generic [ref=e457]: "url: 'http://localhost:3333',"
+                    - generic [ref=e458]: "name: 'Backend',"
+                    - generic [ref=e459]: "timeout: 120 * 1000,"
+                    - generic [ref=e460]: "reuseExistingServer: !process.env.CI,"
+                    - generic [ref=e461]: "}"
+                    - generic [ref=e462]: "],"
+                    - generic [ref=e463]: "use: {"
+                    - generic [ref=e464]: "baseURL: 'http://localhost:3000',"
+                    - generic [ref=e465]: "},"
+                    - generic [ref=e466]: "});"
+                  - button "Copy code to clipboard" [ref=e468] [cursor=pointer]:
+                    - generic [ref=e469]:
+                      - img [ref=e470]
+                      - img [ref=e472]
+          - navigation "Docs pages" [ref=e474]:
+            - link "Previous « UI Mode" [ref=e475] [cursor=pointer]:
+              - /url: /docs/test-ui-mode
+              - generic [ref=e476]: Previous
+              - generic [ref=e477]: « UI Mode
+            - link "Next Library »" [ref=e478] [cursor=pointer]:
+              - /url: /docs/library
+              - generic [ref=e479]: Next
+              - generic [ref=e480]: Library »
+        - list [ref=e483]:
+          - listitem [ref=e484]:
+            - link "Introduction" [ref=e485] [cursor=pointer]:
+              - /url: "#introduction"
+          - listitem [ref=e486]:
+            - link "Configuring a web server" [ref=e487] [cursor=pointer]:
+              - /url: "#configuring-a-web-server"
+          - listitem [ref=e488]:
+            - link "Adding a server timeout" [ref=e489] [cursor=pointer]:
+              - /url: "#adding-a-server-timeout"
+          - listitem [ref=e490]:
+            - link "Adding a baseURL" [ref=e491] [cursor=pointer]:
+              - /url: "#adding-a-baseurl"
+          - listitem [ref=e492]:
+            - link "Multiple web servers" [ref=e493] [cursor=pointer]:
+              - /url: "#multiple-web-servers"
+  - contentinfo [ref=e494]:
+    - generic [ref=e495]:
+      - generic [ref=e496]:
+        - generic [ref=e497]:
+          - generic [ref=e498]: Learn
+          - list [ref=e499]:
+            - listitem [ref=e500]:
+              - link "Getting started" [ref=e501] [cursor=pointer]:
+                - /url: /docs/intro
+            - listitem [ref=e502]:
+              - link "Playwright Training" [ref=e503] [cursor=pointer]:
+                - /url: https://learn.microsoft.com/en-us/training/modules/build-with-playwright/
+                - text: Playwright Training
+                - img [ref=e504]
+            - listitem [ref=e506]:
+              - link "Learn Videos" [ref=e507] [cursor=pointer]:
+                - /url: /community/learn-videos
+            - listitem [ref=e508]:
+              - link "Feature Videos" [ref=e509] [cursor=pointer]:
+                - /url: /community/feature-videos
+        - generic [ref=e510]:
+          - generic [ref=e511]: Community
+          - list [ref=e512]:
+            - listitem [ref=e513]:
+              - link "Stack Overflow" [ref=e514] [cursor=pointer]:
+                - /url: https://stackoverflow.com/questions/tagged/playwright
+                - text: Stack Overflow
+                - img [ref=e515]
+            - listitem [ref=e517]:
+              - link "Discord" [ref=e518] [cursor=pointer]:
+                - /url: https://aka.ms/playwright/discord
+                - text: Discord
+                - img [ref=e519]
+            - listitem [ref=e521]:
+              - link "Twitter" [ref=e522] [cursor=pointer]:
+                - /url: https://twitter.com/playwrightweb
+                - text: Twitter
+                - img [ref=e523]
+            - listitem [ref=e525]:
+              - link "LinkedIn" [ref=e526] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/playwrightweb
+                - text: LinkedIn
+                - img [ref=e527]
+        - generic [ref=e529]:
+          - generic [ref=e530]: More
+          - list [ref=e531]:
+            - listitem [ref=e532]:
+              - link "GitHub" [ref=e533] [cursor=pointer]:
+                - /url: https://github.com/microsoft/playwright
+                - text: GitHub
+                - img [ref=e534]
+            - listitem [ref=e536]:
+              - link "YouTube" [ref=e537] [cursor=pointer]:
+                - /url: https://www.youtube.com/channel/UC46Zj8pDH5tDosqm1gd7WTg
+                - text: YouTube
+                - img [ref=e538]
+            - listitem [ref=e540]:
+              - link "Blog" [ref=e541] [cursor=pointer]:
+                - /url: https://dev.to/playwright
+                - text: Blog
+                - img [ref=e542]
+            - listitem [ref=e544]:
+              - link "Ambassadors" [ref=e545] [cursor=pointer]:
+                - /url: /community/ambassadors
+            - listitem [ref=e546]:
+              - link "Microsoft Privacy Statement" [ref=e547] [cursor=pointer]:
+                - /url: https://go.microsoft.com/fwlink/?LinkId=521839
+                - text: Microsoft Privacy Statement
+                - img [ref=e548]
+      - generic [ref=e551]: Copyright © 2026 Microsoft
+```
